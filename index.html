@@ -293,6 +293,7 @@ footer{background:var(--g900);color:var(--g400);padding:50px 16px 24px;}
 </style>
 </head>
 <body>
+<div id="google_translate_element"></div>
 
 <div class="ann">🕐 Open <strong>7 Days a Week · 7:00 AM – 12:00 AM</strong> &nbsp;|&nbsp; 📍 Chandio Chowk, Ghazi Goth, Gulzar-e-Hijri, Karachi</div>
 
@@ -903,5 +904,16 @@ function obs(){
 
 document.addEventListener('DOMContentLoaded',()=>{rhp();obs();});
 </script>
+     <script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'ur,en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
