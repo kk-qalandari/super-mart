@@ -293,7 +293,7 @@ footer{background:var(--g900);color:var(--g400);padding:50px 16px 24px;}
 </style>
 </head>
 <body>
-<div id="google_translate_element" style="text-align: center; background: #013220; padding: 8px 0; border-bottom: 2px solid #e67e22; display: block;"></div>
+<div id="google_translate_element"></div>
 
 <div class="ann">🕐 Open <strong>7 Days a Week · 7:00 AM – 12:00 AM</strong> &nbsp;|&nbsp; 📍 Chandio Chowk, Ghazi Goth, Gulzar-e-Hijri, Karachi</div>
 
@@ -904,16 +904,33 @@ function obs(){
 
 document.addEventListener('DOMContentLoaded',()=>{rhp();obs();});
 </script>
-     <script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'ur,en',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
+<style>
+  .goog-te-banner-frame, .goog-te-gadget-simple { display: none !important; }
+  body { top: 0px !important; }
+  #custom-translate-wrapper { text-align: center; background: #013220; padding: 8px 0; border-bottom: 2px solid #e67e22; }
+  #custom-lang-sel { background: #013220; color: #fff; padding: 8px; border: 1px solid #e67e22; border-radius: 5px; cursor: pointer; }
+</style>
 
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById('google_translate_element');
+    if (container) {
+      container.style.display = 'none';
+      var wrapper = document.createElement('div');
+      wrapper.id = 'custom-translate-wrapper';
+      wrapper.innerHTML = `<select id="custom-lang-sel"><option value="">Select Language</option><option value="en">English</option><option value="ur">Urdu</option></select>`;
+      container.parentNode.insertBefore(wrapper, container);
+      document.getElementById('custom-lang-sel').onchange = function() {
+        var el = document.querySelector('.goog-te-combo');
+        if (el) { el.value = this.value; el.dispatchEvent(new Event('change')); }
+      };
+    }
+  });
+</script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+     
 </body>
 </html>
