@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     KK Qalandari Super Mart — Official Website
+     Single HTML file. Edit product data in the PRODUCT DATA
+     section at the bottom of this file.
+     Re-upload to Netlify (drag & drop) or GitHub Pages
+     for instant publishing.
+     This site can be easily updated and re-uploaded to
+     Netlify for instant publishing.
+     ============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KK Qalandari Super Mart | Karyana Store in Gulzar-e-Hijri Karachi</title>
+<meta name="description" content="Buy groceries, rashan, household items, baby care, and personal care products from KK Qalandari Super Mart. Order easily on WhatsApp. Gulzar-e-Hijri Scheme 33, Karachi." />
+<meta name="keywords" content="karyana store karachi, grocery gulzar-e-hijri, rashan karachi, super mart scheme 33, KK Qalandari, ghazi goth karachi" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="KK Qalandari Super Mart | Karyana Store in Gulzar-e-Hijri Karachi" />
+<meta property="og:description" content="Groceries, rashan, personal care, baby products, cleaning items and more. Order on WhatsApp. Gulzar-e-Hijri, Karachi." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_PK" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --g:#16a34a;--gd:#15803d;--gl:#dcfce7;--gxl:#f0fdf4;
+  --or:#f97316;--orl:#fff7ed;
+  --w:#fff;--g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;
+  --g300:#d1d5db;--g400:#9ca3af;--g500:#6b7280;
+  --g600:#4b5563;--g700:#374151;--g900:#111827;
+  --red:#ef4444;
+  --sh-sm:0 1px 3px rgba(0,0,0,.08);
+  --sh-md:0 4px 16px rgba(0,0,0,.10);
+  --sh-lg:0 8px 32px rgba(0,0,0,.13);
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:var(--g900);background:var(--w);-webkit-tap-highlight-color:transparent;}
+a{color:inherit;text-decoration:none;}
+button{font-family:'Poppins',sans-serif;}
+
+/* ANNOUNCE */
+.ann{background:var(--gd);color:#fff;text-align:center;padding:9px 16px;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
+.ann strong{color:#86efac;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--w);border-bottom:1px solid var(--g200);box-shadow:var(--sh-sm);}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.logo-icon{width:40px;height:40px;background:var(--g);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.logo strong{display:block;font-size:14px;font-weight:700;color:var(--g900);line-height:1.2;}
+.logo span{font-size:11px;color:var(--g500);}
+.nav-links{display:flex;gap:22px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--g700);transition:color .2s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.act{color:var(--g);}
+.nav-cta{background:var(--g);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;transition:background .2s;}
+.nav-cta:hover{background:var(--gd);}
+.ham{display:none;background:none;border:none;cursor:pointer;padding:4px;}
+.ham span{display:block;width:23px;height:2px;background:var(--g700);margin:5px 0;border-radius:2px;transition:.3s;}
+.mob-menu{display:none;flex-direction:column;background:var(--w);border-top:1px solid var(--g200);}
+.mob-menu a{padding:13px 20px;font-size:15px;font-weight:500;color:var(--g700);display:block;border-bottom:1px solid var(--g100);cursor:pointer;}
+.mob-menu a:hover{color:var(--g);background:var(--g50);}
+.mob-menu.open{display:flex;}
+
+/* PAGES */
+.page{display:none;}
+.page.act{display:block;}
+
+/* DELIVERY NOTE */
+.del-note{background:var(--orl);border-bottom:1px solid #fed7aa;padding:13px 16px;text-align:center;}
+.del-note p{font-size:13px;color:#c2410c;font-weight:600;}
+.del-note p span{color:var(--g600);font-weight:400;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#052e16 0%,#14532d 45%,#166534 100%);padding:68px 16px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(22,163,74,.18) 0%,transparent 60%);}
+.hero-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);color:#bbf7d0;border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;margin-bottom:18px;border:1px solid rgba(255,255,255,.15);}
+.hero h1{font-size:clamp(26px,4.5vw,46px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px;}
+.hero h1 em{color:#86efac;font-style:normal;}
+.hero-sub{font-size:15px;color:#a7f3d0;margin-bottom:10px;line-height:1.65;}
+.hero-note{display:inline-block;background:rgba(249,115,22,.18);color:#fdba74;border:1px solid rgba(249,115,22,.3);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;margin-bottom:28px;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-p{background:var(--or);color:#fff;padding:14px 26px;border-radius:10px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer;}
+.btn-p:hover{background:#ea6c0a;transform:translateY(-1px);box-shadow:0 4px 16px rgba(249,115,22,.4);}
+.btn-gh{background:rgba(255,255,255,.1);color:#fff;padding:14px 26px;border-radius:10px;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.22);cursor:pointer;transition:all .2s;}
+.btn-gh:hover{background:rgba(255,255,255,.18);}
+.hero-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;backdrop-filter:blur(10px);}
+.hero-panel-title{color:#86efac;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
+.hero-cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.hci-card{background:rgba(255,255,255,.08);border-radius:10px;padding:11px;display:flex;align-items:center;gap:9px;}
+.hci-card .ico{font-size:20px;}
+.hci-card span{color:#d1fae5;font-size:12px;font-weight:500;line-height:1.3;}
+.hero-time{margin-top:14px;background:rgba(22,163,74,.2);border-radius:10px;padding:10px 14px;color:#bbf7d0;font-size:13px;font-weight:600;}
+
+/* TRUST STRIP */
+.trust{background:var(--g900);padding:18px 16px;}
+.trust-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px;}
+.ti{display:flex;align-items:center;gap:8px;color:var(--g400);font-size:13px;}
+.ti .e{font-size:18px;}
+.ti strong{color:#fff;}
+
+/* SECTION */
+.sec{padding:60px 16px;}
+.sec-alt{background:var(--g50);}
+.sec-green{background:var(--gxl);}
+.con{max-width:1200px;margin:0 auto;}
+.sec-hd{text-align:center;margin-bottom:38px;}
+.sec-hd h2{font-size:clamp(22px,4vw,30px);font-weight:800;color:var(--g900);margin-bottom:8px;}
+.sec-hd p{color:var(--g500);font-size:15px;max-width:520px;margin:0 auto;}
+.tag{display:inline-block;background:var(--gl);color:var(--gd);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;}
+.tag-or{background:var(--orl);color:#c2410c;}
+
+/* CATEGORIES */
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.cat-card{background:var(--w);border:1.5px solid var(--g200);border-radius:var(--r);padding:20px 10px;text-align:center;cursor:pointer;transition:all .22s;display:block;}
+.cat-card:hover{border-color:var(--g);box-shadow:var(--sh-md);transform:translateY(-3px);}
+.cat-icon{font-size:32px;display:block;margin-bottom:8px;}
+.cat-name{font-size:12px;font-weight:600;color:var(--g700);line-height:1.3;}
+
+/* RASHAN BANNER */
+.rb{background:linear-gradient(135deg,var(--gd) 0%,var(--g) 100%);border-radius:18px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.rb h3{font-size:clamp(20px,3vw,26px);font-weight:800;color:#fff;margin-bottom:8px;}
+.rb p{color:#bbf7d0;font-size:14px;line-height:1.6;max-width:480px;}
+.rb-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+.btn-wh{background:#fff;color:var(--gd);padding:13px 22px;border-radius:10px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer;}
+.btn-wh:hover{background:#f0fdf4;transform:translateY(-1px);}
+.btn-owh{background:transparent;color:#fff;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;transition:all .2s;}
+.btn-owh:hover{background:rgba(255,255,255,.1);}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;}
+.steps::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--gl),var(--g),var(--gl));z-index:0;}
+.step{text-align:center;position:relative;z-index:1;}
+.step-num{width:54px;height:54px;background:var(--g);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 14px;box-shadow:0 4px 14px rgba(22,163,74,.35);}
+.step h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.step p{font-size:13px;color:var(--g500);line-height:1.5;}
+
+/* PRODUCTS */
+.p-ctrl{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;align-items:center;}
+.srch{flex:1;min-width:200px;position:relative;}
+.srch input{width:100%;padding:11px 16px 11px 40px;border:1.5px solid var(--g200);border-radius:10px;font-family:'Poppins',sans-serif;font-size:14px;outline:none;transition:border-color .2s;background:var(--w);}
+.srch input:focus{border-color:var(--g);}
+.srch .si{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--g400);}
+.fsel{padding:11px 14px;border:1.5px solid var(--g200);border-radius:10px;font-family:'Poppins',sans-serif;font-size:14px;outline:none;cursor:pointer;background:var(--w);color:var(--g700);}
+.fsel:focus{border-color:var(--g);}
+.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:16px;}
+.pc{background:var(--w);border:1.5px solid var(--g200);border-radius:var(--r);overflow:hidden;transition:all .22s;position:relative;}
+.pc:hover{border-color:var(--g);box-shadow:var(--sh-md);transform:translateY(-3px);}
+.p-img{width:100%;aspect-ratio:1;background:var(--g100);display:flex;align-items:center;justify-content:center;font-size:56px;}
+.p-body{padding:13px;}
+.p-ctag{font-size:10px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;}
+.p-name{font-size:13px;font-weight:600;color:var(--g900);margin-bottom:11px;line-height:1.35;}
+.p-badge{position:absolute;top:9px;left:9px;background:var(--or);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;}
+.p-badge.gb{background:var(--g);}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--g);color:#fff;width:100%;padding:10px;border-radius:8px;font-size:12px;font-weight:600;border:none;cursor:pointer;transition:background .2s;}
+.btn-wa:hover{background:var(--gd);}
+.btn-wao{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--w);color:var(--g);width:100%;padding:9px;border-radius:8px;font-size:12px;font-weight:600;border:1.5px solid var(--g);cursor:pointer;transition:all .2s;margin-top:6px;}
+.btn-wao:hover{background:var(--gl);}
+.btn-added{background:var(--gd)!important;}
+.no-res{text-align:center;padding:60px 20px;color:var(--g400);}
+.no-res span{font-size:48px;display:block;margin-bottom:10px;}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.fc{background:var(--w);border-radius:var(--r);padding:26px 18px;text-align:center;border:1.5px solid var(--g200);transition:all .2s;}
+.fc:hover{border-color:var(--g);box-shadow:var(--sh-md);}
+.fc .fi{font-size:36px;margin-bottom:12px;display:block;}
+.fc h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.fc p{font-size:13px;color:var(--g500);line-height:1.5;}
+
+/* TESTIMONIALS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.tc{background:var(--w);border:1.5px solid var(--g200);border-radius:var(--r);padding:22px;}
+.stars{color:#facc15;font-size:14px;margin-bottom:10px;}
+.tc p{font-size:13px;color:var(--g600);line-height:1.65;margin-bottom:14px;font-style:italic;}
+.ta{display:flex;align-items:center;gap:10px;}
+.av{width:36px;height:36px;border-radius:50%;background:var(--gl);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.an{font-size:13px;font-weight:600;}
+.al{font-size:11px;color:var(--g400);}
+
+/* ABOUT */
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.ab-vis{background:var(--gxl);border-radius:20px;padding:40px;text-align:center;border:1.5px solid var(--gl);}
+.ab-vis .be{font-size:72px;display:block;margin-bottom:14px;}
+.ab-vis h3{font-size:18px;font-weight:700;color:var(--gd);}
+.ab-vis p{font-size:13px;color:var(--gd);margin-top:4px;}
+.ab-con h2{font-size:clamp(22px,3.5vw,30px);font-weight:800;margin-bottom:14px;}
+.ab-con p{font-size:14px;color:var(--g500);line-height:1.75;margin-bottom:14px;}
+.ab-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.ab-stat{background:var(--g50);border-radius:12px;padding:18px;text-align:center;border:1px solid var(--g200);}
+.ab-stat strong{font-size:26px;font-weight:800;color:var(--g);display:block;}
+.ab-stat span{font-size:12px;color:var(--g500);}
+
+/* CONTACT */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.ct-info{display:flex;flex-direction:column;gap:16px;}
+.cti{display:flex;gap:14px;align-items:flex-start;}
+.ci{width:44px;height:44px;border-radius:10px;background:var(--gl);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.cti h4{font-size:14px;font-weight:700;margin-bottom:3px;}
+.cti p{font-size:13px;color:var(--g500);line-height:1.55;}
+.cti a{color:var(--g);}
+.map-c{border-radius:16px;overflow:hidden;border:1.5px solid var(--g200);height:320px;}
+.map-c iframe{width:100%;height:100%;border:none;display:block;}
+.hrs{display:grid;gap:6px;margin-top:10px;}
+.hr{display:flex;justify-content:space-between;font-size:13px;}
+.hr span:first-child{color:var(--g500);}
+.hr span:last-child{font-weight:600;}
+.ob{display:inline-flex;align-items:center;gap:5px;background:#dcfce7;color:var(--gd);font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-left:8px;}
+.ob::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;}
+.dir-btn{display:inline-flex;align-items:center;gap:6px;background:var(--gl);color:var(--gd);font-size:13px;font-weight:600;padding:10px 18px;border-radius:8px;margin-top:10px;transition:all .2s;}
+.dir-btn:hover{background:var(--g);color:#fff;}
+
+/* RASHAN PAGE */
+.r-pack{background:var(--w);border:2px solid var(--g200);border-radius:18px;padding:28px;position:relative;}
+.r-pack ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:20px;}
+.r-pack ul li{font-size:13px;color:var(--g700);}
+.rp-badge{position:absolute;top:-12px;left:24px;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;color:#fff;}
+
+/* CART FAB */
+.cart-fab{position:fixed;bottom:90px;right:18px;z-index:200;background:var(--or);color:#fff;border-radius:50px;padding:12px 18px;display:none;align-items:center;gap:8px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(249,115,22,.45);border:none;transition:all .2s;}
+.cart-fab.vis{display:flex;}
+.cart-fab:hover{background:#ea6c0a;transform:scale(1.04);}
+.cb{background:#fff;color:var(--or);border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+
+/* CART MODAL */
+.cart-modal{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);align-items:flex-end;justify-content:center;}
+.cart-modal.open{display:flex;}
+.cart-sh{background:#fff;width:100%;max-width:540px;border-radius:20px 20px 0 0;padding:24px;max-height:82vh;overflow-y:auto;}
+.cart-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.cart-hd h3{font-size:18px;font-weight:700;}
+.cart-cl{background:var(--g100);border:none;cursor:pointer;width:32px;height:32px;border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--g500);}
+.cit{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--g100);}
+.cit-ico{font-size:24px;width:34px;text-align:center;}
+.cit-nm{flex:1;font-size:14px;font-weight:500;}
+.cit-rm{background:none;border:none;cursor:pointer;color:var(--red);font-size:18px;padding:4px;}
+.cart-acts{margin-top:18px;display:flex;flex-direction:column;gap:10px;}
+.cart-emp{text-align:center;padding:32px 0;color:var(--g400);font-size:14px;}
+.cart-note-txt{font-size:12px;color:var(--g400);text-align:center;margin-top:10px;line-height:1.5;}
+
+/* WA FLOAT */
+.wa-f{position:fixed;bottom:18px;right:18px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:all .2s;animation:pw 2.5s infinite;}
+.wa-f:hover{background:#1ebe5d;transform:scale(1.1);}
+@keyframes pw{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45);}50%{box-shadow:0 4px 30px rgba(37,211,102,.7);}}
+
+/* FOOTER */
+footer{background:var(--g900);color:var(--g400);padding:50px 16px 24px;}
+.ft-in{max-width:1200px;margin:0 auto;}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+.ft-brand strong{color:#fff;font-size:15px;display:block;margin-bottom:8px;}
+.ft-brand p{font-size:13px;line-height:1.7;}
+.ft-col h4{color:#fff;font-size:12px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ft-col ul a{color:var(--g400);font-size:13px;transition:color .2s;cursor:pointer;}
+.ft-col ul a:hover{color:var(--g);}
+.ft-bot{border-top:1px solid #1f2937;padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.ft-bot p{font-size:12px;}
+.ft-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:12px;}
+
+/* ANIMATION */
+.fi{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .nav-links,.nav-cta{display:none;}
+  .ham{display:block;}
+  .hero-in{grid-template-columns:1fr;text-align:center;}
+  .hero-btns{justify-content:center;}
+  .hero-panel{display:none;}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+  .feat-grid{grid-template-columns:repeat(2,1fr);}
+  .test-grid{grid-template-columns:1fr 1fr;}
+  .ab-grid{grid-template-columns:1fr;}
+  .ct-grid{grid-template-columns:1fr;}
+  .ft-grid{grid-template-columns:1fr 1fr;}
+  .steps::before{display:none;}
+  .steps{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:540px){
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .ft-grid{grid-template-columns:1fr;}
+  .p-grid{grid-template-columns:repeat(2,1fr);}
+  .ab-stats{grid-template-columns:1fr 1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .rb{padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="ann">🕐 Open <strong>7 Days a Week · 7:00 AM – 12:00 AM</strong> &nbsp;|&nbsp; 📍 Chandio Chowk, Ghazi Goth, Gulzar-e-Hijri, Karachi</div>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo" onclick="sp('home')">
+      <div class="logo-icon">🛒</div>
+      <div><strong>KK Qalandari Super Mart</strong><span>Karyana Store · Gulzar-e-Hijri</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="sp('home')" id="nh" class="act">Home</a></li>
+      <li><a onclick="sp('products')" id="np">Products</a></li>
+      <li><a onclick="sp('rashan')" id="nr">Monthly Rashan</a></li>
+      <li><a onclick="sp('about')" id="na">About</a></li>
+      <li><a onclick="sp('contact')" id="nc">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20place%20an%20order%20from%20KK%20Qalandari%20Super%20Mart." class="nav-cta" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.27a.75.75 0 0 0 .918.932l5.62-1.476A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.502-5.17-1.382l-.37-.218-3.837 1.006 1.024-3.733-.24-.384A9.959 9.959 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp Order
+    </a>
+    <button class="ham" onclick="tm()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mm">
+    <a onclick="sp('home');tm()">🏠 Home</a>
+    <a onclick="sp('products');tm()">🛍️ Products</a>
+    <a onclick="sp('rashan');tm()">📦 Monthly Rashan</a>
+    <a onclick="sp('about');tm()">ℹ️ About</a>
+    <a onclick="sp('contact');tm()">📍 Contact</a>
+    <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20place%20an%20order." target="_blank">💬 WhatsApp Order</a>
+  </div>
+</nav>
+
+<div class="del-note"><p>📦 <strong>Delivery or pickup will be confirmed on WhatsApp after order.</strong> <span>No prices shown — send your order and we'll confirm everything on WhatsApp.</span></p></div>
+
+<!-- ══ HOME ══ -->
+<div class="page act" id="page-home">
+
+  <section class="hero">
+    <div class="hero-in">
+      <div>
+        <div class="hero-tag">📍 Chandio Chowk, Ghazi Goth, Gulzar-e-Hijri</div>
+        <h1>Everything Your Home Needs —<br/><em>All in One Place</em></h1>
+        <p class="hero-sub">Groceries, rashan, personal care, baby products, cleaning items, and more — at your trusted neighbourhood karyana store.</p>
+        <div class="hero-note">📦 Delivery or pickup confirmed on WhatsApp after order</div>
+        <div class="hero-btns">
+          <button class="btn-p" onclick="sp('products')">🛍️ Browse Products</button>
+          <a class="btn-gh" href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20place%20an%20order%20from%20KK%20Qalandari%20Super%20Mart." target="_blank">💬 Order on WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-title">What We Carry</div>
+        <div class="hero-cats">
+          <div class="hci-card"><span class="ico">🌾</span><span>Grocery &amp; Rashan</span></div>
+          <div class="hci-card"><span class="ico">🥤</span><span>Beverages</span></div>
+          <div class="hci-card"><span class="ico">🍪</span><span>Snacks &amp; Biscuits</span></div>
+          <div class="hci-card"><span class="ico">🧴</span><span>Personal Care</span></div>
+          <div class="hci-card"><span class="ico">🧹</span><span>Household</span></div>
+          <div class="hci-card"><span class="ico">👶</span><span>Baby Care</span></div>
+          <div class="hci-card"><span class="ico">🥛</span><span>Milk &amp; Eggs</span></div>
+          <div class="hci-card"><span class="ico">🏥</span><span>Health &amp; Daily Use</span></div>
+        </div>
+        <div class="hero-time">🕐 Open 7:00 AM – 12:00 AM · Every Day</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust"><div class="trust-in">
+    <div class="ti"><span class="e">🤝</span><span>Serving Local Community</span></div>
+    <div class="ti"><span class="e">🕐</span><strong>Open 7 AM – 12 AM · 7 Days</strong></div>
+    <div class="ti"><span class="e">💬</span><span>WhatsApp Easy Ordering</span></div>
+    <div class="ti"><span class="e">🏠</span><span>Complete Household Items Available</span></div>
+  </div></div>
+
+  <section class="sec">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">Browse</span><h2>Shop by Category</h2><p>Tap any category to see all items</p></div>
+      <div class="cat-grid">
+        <a class="cat-card" onclick="fc('Grocery &amp; Rashan')"><span class="cat-icon">🌾</span><div class="cat-name">Grocery &amp; Rashan</div></a>
+        <a class="cat-card" onclick="fc('Beverages')"><span class="cat-icon">🥤</span><div class="cat-name">Beverages</div></a>
+        <a class="cat-card" onclick="fc('Snacks &amp; Biscuits')"><span class="cat-icon">🍪</span><div class="cat-name">Snacks &amp; Biscuits</div></a>
+        <a class="cat-card" onclick="fc('Personal Care')"><span class="cat-icon">🧴</span><div class="cat-name">Personal Care</div></a>
+        <a class="cat-card" onclick="fc('Household &amp; Cleaning')"><span class="cat-icon">🧹</span><div class="cat-name">Household &amp; Cleaning</div></a>
+        <a class="cat-card" onclick="fc('Baby Care')"><span class="cat-icon">👶</span><div class="cat-name">Baby Care</div></a>
+        <a class="cat-card" onclick="fc('Milk &amp; Essentials')"><span class="cat-icon">🥛</span><div class="cat-name">Milk &amp; Essentials</div></a>
+        <a class="cat-card" onclick="fc('Health &amp; Daily Use')"><span class="cat-icon">🏥</span><div class="cat-name">Health &amp; Daily Use</div></a>
+        <a class="cat-card" onclick="fc('Kitchen &amp; Misc')"><span class="cat-icon">🍞</span><div class="cat-name">Kitchen &amp; Misc</div></a>
+        <a class="cat-card" onclick="sp('rashan')" style="border-color:var(--or);"><span class="cat-icon">📦</span><div class="cat-name" style="color:var(--or);">Monthly Rashan Packs</div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="con">
+      <div class="rb">
+        <div>
+          <span class="tag tag-or" style="margin-bottom:12px;">Most Ordered</span>
+          <h3>📦 Complete Monthly Rashan Available</h3>
+          <p>Send your full rashan list on WhatsApp — atta, chawal, daal, ghee, masalas, and all essentials. We prepare everything and confirm pickup or delivery.</p>
+          <div class="rb-btns">
+            <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20send%20my%20complete%20monthly%20rashan%20list.%20Please%20confirm%20availability%20and%20delivery%20options." target="_blank" class="btn-wh">📋 Send Your Rashan List</a>
+            <a onclick="sp('rashan')" class="btn-owh">View Rashan Packs →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">Simple Process</span><h2>How to Order</h2><p>4 easy steps — no app, no signup needed</p></div>
+      <div class="steps">
+        <div class="step fi"><div class="step-num">1</div><h4>Browse Items</h4><p>Explore our full list by category or search for what you need.</p></div>
+        <div class="step fi"><div class="step-num">2</div><h4>Add to Order</h4><p>Tap "Add to Order" on each item to build your complete list.</p></div>
+        <div class="step fi"><div class="step-num">3</div><h4>Send on WhatsApp</h4><p>Send your full list in one tap — no typing, no forms.</p></div>
+        <div class="step fi"><div class="step-num">4</div><h4>Confirm Pickup or Delivery</h4><p>We confirm your order and arrange pickup or delivery directly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">Popular Items</span><h2>Frequently Ordered</h2><p>Daily essentials your neighbours order most</p></div>
+      <div class="p-grid" id="home-pg"></div>
+      <div style="text-align:center;margin-top:28px;"><button class="btn-p" onclick="sp('products')">View All Products →</button></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">Why Choose Us</span><h2>Your Trusted Neighbourhood Store</h2></div>
+      <div class="feat-grid">
+        <div class="fc fi"><span class="fi-icon" style="font-size:36px;display:block;margin-bottom:12px;">🏪</span><h4>Real Karyana Store</h4><p>A genuine neighbourhood karyana store serving Sector 30, Ghazi Goth, and surroundings.</p></div>
+        <div class="fc fi"><span style="font-size:36px;display:block;margin-bottom:12px;">🕐</span><h4>Open 7 AM – 12 AM</h4><p>Open every day of the week, early morning until midnight — no off days.</p></div>
+        <div class="fc fi"><span style="font-size:36px;display:block;margin-bottom:12px;">📱</span><h4>WhatsApp Easy</h4><p>No app, no signup. Just message your order list — we handle the rest.</p></div>
+        <div class="fc fi"><span style="font-size:36px;display:block;margin-bottom:12px;">🏠</span><h4>Everything Available</h4><p>From daily rashan to baby care — one store for all your household needs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">Reviews</span><h2>What Our Customers Say</h2></div>
+      <div class="test-grid">
+        <div class="tc fi"><div class="stars">★★★★★</div><p>"Sab kuch milta hai yahan. Rashan se le ke baby products tak. WhatsApp pe order karo — jaldi ho jaata hai."</p><div class="ta"><div class="av">👩</div><div><div class="an">Amna Bibi</div><div class="al">Sector 30, Karachi</div></div></div></div>
+        <div class="tc fi"><div class="stars">★★★★★</div><p>"Best karyana store in the area. Monthly rashan bhi yahan se lein — sab kuch ready mil jaata hai."</p><div class="ta"><div class="av">👨</div><div><div class="an">Zubair Ahmed</div><div class="al">Gulzar-e-Hijri</div></div></div></div>
+        <div class="tc fi"><div class="stars">★★★★☆</div><p>"Bahut acha service hai. Surf, Pampers, Tapal — sab ek jagah. WhatsApp pe message karo, jaldi reply milti hai."</p><div class="ta"><div class="av">👩</div><div><div class="an">Saba Noor</div><div class="al">Ghazi Goth, Karachi</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══ PRODUCTS ══ -->
+<div class="page" id="page-products">
+  <section class="sec">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">All Products</span><h2>Complete Product List</h2><p>Browse, add items to your order, then send the full list on WhatsApp in one tap</p></div>
+      <div class="p-ctrl">
+        <div class="srch">
+          <svg class="si" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="ps" placeholder="Search e.g. atta, dettol, pampers, noodles..." oninput="rp()" />
+        </div>
+        <select class="fsel" id="cf" onchange="rp()">
+          <option value="">All Categories</option>
+          <option>Grocery &amp; Rashan</option>
+          <option>Beverages</option>
+          <option>Snacks &amp; Biscuits</option>
+          <option>Personal Care</option>
+          <option>Household &amp; Cleaning</option>
+          <option>Baby Care</option>
+          <option>Milk &amp; Essentials</option>
+          <option>Health &amp; Daily Use</option>
+          <option>Kitchen &amp; Misc</option>
+        </select>
+      </div>
+      <div class="p-grid" id="apg"></div>
+      <div class="no-res" id="nr" style="display:none;"><span>🔍</span><p>No products found. Try different keywords.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ RASHAN ══ -->
+<div class="page" id="page-rashan">
+  <section class="sec">
+    <div class="con">
+      <div class="sec-hd"><span class="tag tag-or">Most Ordered</span><h2>Monthly Rashan Packs</h2><p>Pre-assembled household essentials. Order on WhatsApp — we confirm contents and delivery.</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+
+        <div class="r-pack">
+          <span class="rp-badge" style="background:var(--g);">Most Ordered</span>
+          <div style="font-size:48px;margin-bottom:14px;">📦</div>
+          <h3 style="font-size:18px;font-weight:800;margin-bottom:8px;">Basic Rashan Pack</h3>
+          <p style="font-size:13px;color:var(--g500);margin-bottom:16px;line-height:1.6;">Ideal for a small family. Covers core daily kitchen essentials.</p>
+          <ul>
+            <li>✅ Atta 5kg</li><li>✅ Rice 5kg</li><li>✅ Sugar 1kg</li>
+            <li>✅ Cooking Oil 1L</li><li>✅ Masoor Daal 500g</li>
+            <li>✅ Salt + Basic Masalas</li><li>✅ Tapal Tea 200g</li>
+          </ul>
+          <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20order%20the%20Basic%20Rashan%20Pack.%0APlease%20confirm%3A%20Pickup%20or%20Delivery" target="_blank" class="btn-wa">💬 Order on WhatsApp</a>
+        </div>
+
+        <div class="r-pack" style="border-color:var(--g);box-shadow:var(--sh-md);">
+          <span class="rp-badge" style="background:var(--or);">⭐ Best Value</span>
+          <div style="font-size:48px;margin-bottom:14px;">📦</div>
+          <h3 style="font-size:18px;font-weight:800;margin-bottom:8px;">Family Rashan Pack</h3>
+          <p style="font-size:13px;color:var(--g500);margin-bottom:16px;line-height:1.6;">For a family of 4–6. Full month of kitchen essentials covered.</p>
+          <ul>
+            <li>✅ Atta 10kg</li><li>✅ Basmati Rice 10kg</li>
+            <li>✅ Sugar 2kg</li><li>✅ Ghee / Cooking Oil</li>
+            <li>✅ Mixed Daal (Masoor + Chana)</li>
+            <li>✅ Shan / National Masalas</li>
+            <li>✅ Tapal Danedar 400g</li><li>✅ Besan + Suji + Maida</li>
+          </ul>
+          <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20order%20the%20Family%20Rashan%20Pack.%0APlease%20confirm%3A%20Pickup%20or%20Delivery" target="_blank" class="btn-wa">💬 Order on WhatsApp</a>
+        </div>
+
+        <div class="r-pack">
+          <span class="rp-badge" style="background:var(--gd);">Complete Package</span>
+          <div style="font-size:48px;margin-bottom:14px;">🏠</div>
+          <h3 style="font-size:18px;font-weight:800;margin-bottom:8px;">Full Monthly Rashan</h3>
+          <p style="font-size:13px;color:var(--g500);margin-bottom:16px;line-height:1.6;">Complete monthly supply. Send your custom list — we prepare everything.</p>
+          <ul>
+            <li>✅ All grocery &amp; staples</li>
+            <li>✅ All masalas (Shan, National)</li>
+            <li>✅ Cleaning &amp; household items</li>
+            <li>✅ Personal care items</li>
+            <li>✅ Baby care (on request)</li>
+            <li>✅ Beverages &amp; snacks</li>
+            <li>✅ Custom list welcome</li>
+          </ul>
+          <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20send%20my%20full%20monthly%20rashan%20list.%0APlease%20confirm%20availability%20and%20delivery%20options.%0A%0AMy%20list%3A%0A-%20" target="_blank" class="btn-wa">📋 Send Full List on WhatsApp</a>
+        </div>
+
+      </div>
+      <div style="margin-top:36px;background:var(--g50);border:1.5px dashed var(--g);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-size:38px;margin-bottom:10px;">✍️</div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Have a Custom Rashan List?</h3>
+        <p style="font-size:14px;color:var(--g500);margin-bottom:20px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.65;">Send us your complete list on WhatsApp. We'll prepare everything and confirm pickup or delivery.</p>
+        <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20send%20my%20complete%20rashan%20list.%0APlease%20confirm%20delivery%20options.%0A%0AMy%20list%3A%0A-%20" target="_blank" class="btn-p" style="display:inline-flex;">📋 Send Full Rashan List on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div class="page" id="page-about">
+  <section class="sec">
+    <div class="con">
+      <div class="ab-grid">
+        <div class="ab-vis">
+          <span class="be">🏪</span>
+          <h3>KK Qalandari Super Mart</h3>
+          <p>Chandio Chowk, Ghazi Goth, Gulzar-e-Hijri, Karachi</p>
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:var(--gl);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--gd);font-weight:600;">🕐 Open 7:00 AM – 12:00 AM · 7 Days</div>
+            <div style="background:var(--gl);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--gd);font-weight:600;">💬 Orders via WhatsApp · Pickup or Delivery</div>
+          </div>
+        </div>
+        <div class="ab-con">
+          <span class="tag">About Us</span>
+          <h2>Your Trusted Local Karyana Store</h2>
+          <p>KK Qalandari Super Mart is your trusted neighbourhood karyana store in Karachi, providing high-quality products at affordable prices. We serve our community with fast service and reliable support.</p>
+          <p>Located at Chandio Chowk in Gulzar-e-Hijri, we supply daily essentials — from rashan and grocery staples to personal care, household cleaning, baby products, and health items — to families across Sector 30, Ghazi Goth, and surrounding areas.</p>
+          <p>Order via WhatsApp and we will confirm pickup or delivery directly. Simple, fast, and trustworthy.</p>
+          <div class="ab-stats">
+            <div class="ab-stat"><strong>500+</strong><span>Happy Customers</span></div>
+            <div class="ab-stat"><strong>300+</strong><span>Products Available</span></div>
+            <div class="ab-stat"><strong>7</strong><span>Days a Week</span></div>
+            <div class="ab-stat"><strong>17hr</strong><span>Open Daily</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div class="page" id="page-contact">
+  <section class="sec">
+    <div class="con">
+      <div class="sec-hd"><span class="tag">Find Us</span><h2>Contact &amp; Location</h2><p>Visit us, or send a WhatsApp message — we respond quickly</p></div>
+      <div class="ct-grid">
+        <div class="ct-info">
+          <div class="cti">
+            <div class="ci">📍</div>
+            <div>
+              <h4>Our Address</h4>
+              <p>Shop #1 Chandio Chowk, Ghazi Goth, Sector 30,<br/>Gulzar-e-Hijri Scheme 33, Karachi 75330</p>
+              <a class="dir-btn" href="https://www.google.com/maps/search/?api=1&query=Chandio+Chowk+Ghazi+Goth+Gulzar+e+Hijri+Karachi" target="_blank">🗺️ Get Directions on Google Maps</a>
+            </div>
+          </div>
+          <div class="cti">
+            <div class="ci">💬</div>
+            <div>
+              <h4>WhatsApp Orders</h4>
+              <p><a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20place%20an%20order." target="_blank">+92 346 063 9881</a><br/>Tap to message — delivery or pickup confirmed on WhatsApp.</p>
+            </div>
+          </div>
+          <div class="cti">
+            <div class="ci">🕐</div>
+            <div>
+              <h4>Business Hours <span class="ob">Open Now</span></h4>
+              <div class="hrs">
+                <div class="hr"><span>Monday – Sunday</span><span>7:00 AM – 12:00 AM</span></div>
+                <div class="hr"><span>Public Holidays</span><span>7:00 AM – 12:00 AM</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cti">
+            <div class="ci">📦</div>
+            <div><h4>Delivery Policy</h4><p>Delivery or pickup is confirmed on WhatsApp after order. We serve Sector 30, Ghazi Goth, and nearby areas.</p></div>
+          </div>
+          <a href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20place%20an%20order%20from%20KK%20Qalandari%20Super%20Mart." target="_blank" class="btn-p" style="justify-content:center;">💬 Send WhatsApp Message Now</a>
+        </div>
+        <div>
+          <div class="map-c">
+            <iframe src="https://www.google.com/maps?q=Chandio+Chowk+Ghazi+Goth+Karachi&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <p style="font-size:12px;color:var(--g400);margin-top:8px;text-align:center;">📍 Chandio Chowk, Ghazi Goth, Gulzar-e-Hijri, Karachi</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Chandio+Chowk+Ghazi+Goth+Gulzar+e+Hijri+Karachi" target="_blank" class="dir-btn">🗺️ Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="ft-in">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <strong>🛒 KK Qalandari Super Mart</strong>
+        <p>Your trusted neighbourhood karyana store in Gulzar-e-Hijri, Karachi. Groceries, rashan, personal care, household, and baby products — all in one place.</p>
+        <a href="https://wa.me/923460639881?text=Hello!" target="_blank" class="ft-wa">💬 WhatsApp: +92 346 063 9881</a>
+        <p style="margin-top:10px;font-size:12px;color:#4b5563;">🕐 Open 7 AM – 12 AM · 7 Days a Week</p>
+        <p style="font-size:12px;color:#4b5563;">📍 Chandio Chowk, Ghazi Goth, Karachi</p>
+      </div>
+      <div class="ft-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a onclick="sp('home')">Home</a></li>
+          <li><a onclick="sp('products')">All Products</a></li>
+          <li><a onclick="sp('rashan')">Monthly Rashan</a></li>
+          <li><a onclick="sp('about')">About Us</a></li>
+          <li><a onclick="sp('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a onclick="fc('Grocery &amp; Rashan')">Grocery &amp; Rashan</a></li>
+          <li><a onclick="fc('Beverages')">Beverages</a></li>
+          <li><a onclick="fc('Snacks &amp; Biscuits')">Snacks &amp; Biscuits</a></li>
+          <li><a onclick="fc('Personal Care')">Personal Care</a></li>
+          <li><a onclick="fc('Household &amp; Cleaning')">Household</a></li>
+          <li><a onclick="fc('Baby Care')">Baby Care</a></li>
+          <li><a onclick="fc('Milk &amp; Essentials')">Milk &amp; Essentials</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Order Info</h4>
+        <ul>
+          <li><a>💬 WhatsApp Orders Only</a></li>
+          <li><a>📦 Pickup or Delivery</a></li>
+          <li><a>🕐 7 AM – 12 AM Daily</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Chandio+Chowk+Ghazi+Goth+Gulzar+e+Hijri+Karachi" target="_blank">🗺️ Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2025 KK Qalandari Super Mart · Gulzar-e-Hijri, Karachi</p>
+      <p>Made with ❤️ for the community</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-f" href="https://wa.me/923460639881?text=Hello!%20I%20want%20to%20place%20an%20order%20from%20KK%20Qalandari%20Super%20Mart." target="_blank" title="Order on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.27a.75.75 0 0 0 .918.932l5.62-1.476A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.502-5.17-1.382l-.37-.218-3.837 1.006 1.024-3.733-.24-.384A9.959 9.959 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<button class="cart-fab" id="cfab" onclick="oc()">🛒 My Order <span class="cb" id="ccb">0</span></button>
+
+<div class="cart-modal" id="cmodal" onclick="if(event.target===this)cc()">
+  <div class="cart-sh">
+    <div class="cart-hd"><h3>🛒 Your Order List</h3><button class="cart-cl" onclick="cc()">×</button></div>
+    <div id="clist"></div>
+    <div class="cart-acts" id="cacts"></div>
+    <p class="cart-note-txt">📦 Delivery or pickup will be confirmed on WhatsApp after order.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PRODUCT DATA
+     To add/remove/edit products, find this
+     section and modify the array below.
+     Each product needs: id, name, category,
+     emoji, and badge (or null).
+     ══════════════════════════════════════════ -->
+<script>
+const P = [
+  // ── GROCERY & RASHAN ──
+  {id:1,  n:"Atta (5kg)",                   c:"Grocery & Rashan", e:"🌾", b:"Essential"},
+  {id:2,  n:"Atta (10kg)",                  c:"Grocery & Rashan", e:"🌾", b:"Essential"},
+  {id:3,  n:"Basmati Rice (5kg)",           c:"Grocery & Rashan", e:"🍚", b:"Popular"},
+  {id:4,  n:"Irri Rice (5kg)",              c:"Grocery & Rashan", e:"🍚", b:null},
+  {id:5,  n:"Masoor Daal",                  c:"Grocery & Rashan", e:"🫘", b:"Essential"},
+  {id:6,  n:"Chana Daal",                   c:"Grocery & Rashan", e:"🫘", b:null},
+  {id:7,  n:"Moong Daal",                   c:"Grocery & Rashan", e:"🫘", b:null},
+  {id:8,  n:"Urad Daal",                    c:"Grocery & Rashan", e:"🫘", b:null},
+  {id:9,  n:"Sugar (1kg)",                  c:"Grocery & Rashan", e:"🍬", b:"Essential"},
+  {id:10, n:"Sugar (2kg)",                  c:"Grocery & Rashan", e:"🍬", b:null},
+  {id:11, n:"Salt (Namak)",                 c:"Grocery & Rashan", e:"🧂", b:null},
+  {id:12, n:"Cooking Oil (1L)",             c:"Grocery & Rashan", e:"🫙", b:"Essential"},
+  {id:13, n:"Cooking Oil (5L)",             c:"Grocery & Rashan", e:"🫙", b:null},
+  {id:14, n:"Desi Ghee",                    c:"Grocery & Rashan", e:"🧈", b:"Popular"},
+  {id:15, n:"Besan",                        c:"Grocery & Rashan", e:"🌾", b:null},
+  {id:16, n:"Suji (Semolina)",              c:"Grocery & Rashan", e:"🌾", b:null},
+  {id:17, n:"Maida",                        c:"Grocery & Rashan", e:"🌾", b:null},
+  {id:18, n:"Haldi Powder",                 c:"Grocery & Rashan", e:"🌶️", b:null},
+  {id:19, n:"Lal Mirch Powder",             c:"Grocery & Rashan", e:"🌶️", b:null},
+  {id:20, n:"Garam Masala",                 c:"Grocery & Rashan", e:"🌿", b:null},
+  {id:21, n:"Zeera (Cumin)",                c:"Grocery & Rashan", e:"🌿", b:null},
+  {id:22, n:"Dhaniya Powder",               c:"Grocery & Rashan", e:"🌿", b:null},
+  {id:23, n:"Shan Biryani Masala",          c:"Grocery & Rashan", e:"🍛", b:"Popular"},
+  {id:24, n:"Shan Nihari Masala",           c:"Grocery & Rashan", e:"🍛", b:null},
+  {id:25, n:"National Karahi Masala",       c:"Grocery & Rashan", e:"🍛", b:null},
+  {id:26, n:"National Achar (Pickle)",      c:"Grocery & Rashan", e:"🫙", b:null},
+  {id:27, n:"Tomato Ketchup",               c:"Grocery & Rashan", e:"🍅", b:null},
+  {id:28, n:"Chilli Garlic Sauce",          c:"Grocery & Rashan", e:"🫙", b:null},
+  {id:29, n:"Tapal Danedar Tea",            c:"Grocery & Rashan", e:"☕", b:"Popular"},
+  {id:30, n:"Lipton Tea Bags",              c:"Grocery & Rashan", e:"☕", b:null},
+  {id:31, n:"Nescafe Coffee",               c:"Grocery & Rashan", e:"☕", b:null},
+  // ── BEVERAGES ──
+  {id:32, n:"Coca-Cola (1.5L)",             c:"Beverages", e:"🥤", b:"Popular"},
+  {id:33, n:"Pepsi (1.5L)",                 c:"Beverages", e:"🥤", b:"Popular"},
+  {id:34, n:"7UP (1.5L)",                   c:"Beverages", e:"🥤", b:null},
+  {id:35, n:"Sprite (1.5L)",                c:"Beverages", e:"🥤", b:null},
+  {id:36, n:"Sting Energy Drink",           c:"Beverages", e:"⚡", b:"Popular"},
+  {id:37, n:"Power Horse Energy",           c:"Beverages", e:"⚡", b:null},
+  {id:38, n:"Mineral Water (500ml)",        c:"Beverages", e:"💧", b:null},
+  {id:39, n:"Mineral Water (1.5L)",         c:"Beverages", e:"💧", b:null},
+  {id:40, n:"Rooh Afza",                    c:"Beverages", e:"🍹", b:"Popular"},
+  {id:41, n:"Nestle Fruit Juice",           c:"Beverages", e:"🧃", b:null},
+  {id:42, n:"Tang Powder (Orange)",         c:"Beverages", e:"🧃", b:null},
+  // ── SNACKS & BISCUITS ──
+  {id:43, n:"Lays Chips",                   c:"Snacks & Biscuits", e:"🍟", b:"Popular"},
+  {id:44, n:"Kurkure",                      c:"Snacks & Biscuits", e:"🌽", b:"Popular"},
+  {id:45, n:"Nimko Mix",                    c:"Snacks & Biscuits", e:"🥜", b:null},
+  {id:46, n:"Chanachur",                    c:"Snacks & Biscuits", e:"🥗", b:null},
+  {id:47, n:"Peek Freans Gluco",            c:"Snacks & Biscuits", e:"🍪", b:null},
+  {id:48, n:"LU Bakeri Biscuits",           c:"Snacks & Biscuits", e:"🍪", b:null},
+  {id:49, n:"Cake Rusk",                    c:"Snacks & Biscuits", e:"🍞", b:"Popular"},
+  {id:50, n:"Rio Biscuits",                 c:"Snacks & Biscuits", e:"🍪", b:null},
+  {id:51, n:"Prince Biscuits",              c:"Snacks & Biscuits", e:"🍪", b:null},
+  {id:52, n:"Candies / Toffee Mix",         c:"Snacks & Biscuits", e:"🍬", b:null},
+  {id:53, n:"Dairy Milk Chocolate",         c:"Snacks & Biscuits", e:"🍫", b:null},
+  {id:54, n:"Popcorn",                      c:"Snacks & Biscuits", e:"🍿", b:null},
+  {id:55, n:"Peanuts (Moongphali)",         c:"Snacks & Biscuits", e:"🥜", b:null},
+  // ── PERSONAL CARE ──
+  {id:56, n:"Lifebuoy Soap Bar",            c:"Personal Care", e:"🫧", b:null},
+  {id:57, n:"Dettol Soap Bar",              c:"Personal Care", e:"🫧", b:"Popular"},
+  {id:58, n:"Head & Shoulders Shampoo",     c:"Personal Care", e:"🧴", b:"Popular"},
+  {id:59, n:"Sunsilk Shampoo",              c:"Personal Care", e:"🧴", b:null},
+  {id:60, n:"Conditioner",                  c:"Personal Care", e:"🧴", b:null},
+  {id:61, n:"Face Wash",                    c:"Personal Care", e:"🧼", b:null},
+  {id:62, n:"Moisturiser / Cream",          c:"Personal Care", e:"🧴", b:null},
+  {id:63, n:"Vaseline Lotion",              c:"Personal Care", e:"🧴", b:null},
+  {id:64, n:"Hair Oil (Dabur Amla)",        c:"Personal Care", e:"💆", b:null},
+  {id:65, n:"Colgate Toothpaste",           c:"Personal Care", e:"🦷", b:"Popular"},
+  {id:66, n:"Toothbrush",                   c:"Personal Care", e:"🪥", b:null},
+  {id:67, n:"Razor",                        c:"Personal Care", e:"🪒", b:null},
+  {id:68, n:"Razor Blades",                 c:"Personal Care", e:"🪒", b:null},
+  {id:69, n:"Deodorant (Axe / Rexona)",     c:"Personal Care", e:"💨", b:null},
+  // ── HOUSEHOLD & CLEANING ──
+  {id:70, n:"Surf Excel (500g)",            c:"Household & Cleaning", e:"🧼", b:"Popular"},
+  {id:71, n:"Ariel Detergent",              c:"Household & Cleaning", e:"🧼", b:null},
+  {id:72, n:"Vim Dishwash Bar",             c:"Household & Cleaning", e:"🧽", b:"Popular"},
+  {id:73, n:"Vim Dishwash Liquid",          c:"Household & Cleaning", e:"🧽", b:null},
+  {id:74, n:"Harpic Toilet Cleaner",        c:"Household & Cleaning", e:"🚽", b:null},
+  {id:75, n:"Floor Cleaner",               c:"Household & Cleaning", e:"🧹", b:null},
+  {id:76, n:"Tissue Box",                   c:"Household & Cleaning", e:"📦", b:null},
+  {id:77, n:"Toilet Paper Roll",            c:"Household & Cleaning", e:"🧻", b:"Popular"},
+  {id:78, n:"Garbage Bags",                 c:"Household & Cleaning", e:"🛍️", b:null},
+  {id:79, n:"Matchbox",                     c:"Household & Cleaning", e:"🔥", b:null},
+  {id:80, n:"Candles",                      c:"Household & Cleaning", e:"🕯️", b:null},
+  {id:81, n:"Steel Scrubber / Scotch Brite",c:"Household & Cleaning", e:"🧽", b:null},
+  // ── BABY CARE ──
+  {id:82, n:"Pampers (Small)",              c:"Baby Care", e:"👶", b:"Popular"},
+  {id:83, n:"Pampers (Medium)",             c:"Baby Care", e:"👶", b:"Popular"},
+  {id:84, n:"Pampers (Large)",              c:"Baby Care", e:"👶", b:null},
+  {id:85, n:"Baby Wipes",                   c:"Baby Care", e:"🧻", b:"Popular"},
+  {id:86, n:"Baby Lotion (Johnson's)",      c:"Baby Care", e:"🧴", b:null},
+  {id:87, n:"Baby Powder (Johnson's)",      c:"Baby Care", e:"🫧", b:null},
+  {id:88, n:"Baby Shampoo",                 c:"Baby Care", e:"🧴", b:null},
+  // ── MILK & ESSENTIALS ──
+  {id:89, n:"Olpers Milk (1L)",             c:"Milk & Essentials", e:"🥛", b:"Popular"},
+  {id:90, n:"Milkpak (1L)",                 c:"Milk & Essentials", e:"🥛", b:"Popular"},
+  {id:91, n:"Tarang Tea Whitener",          c:"Milk & Essentials", e:"🥛", b:"Popular"},
+  {id:92, n:"Everyday Powder Milk",         c:"Milk & Essentials", e:"🥛", b:null},
+  {id:93, n:"Nido Powder Milk",             c:"Milk & Essentials", e:"🥛", b:null},
+  {id:94, n:"Eggs (Half Dozen)",            c:"Milk & Essentials", e:"🥚", b:"Popular"},
+  {id:95, n:"Eggs (Full Dozen)",            c:"Milk & Essentials", e:"🥚", b:"Popular"},
+  // ── HEALTH & DAILY USE ──
+  {id:96, n:"Mortein Mosquito Coil",        c:"Health & Daily Use", e:"🌀", b:null},
+  {id:97, n:"Mortein Mosquito Spray",       c:"Health & Daily Use", e:"🌿", b:"Popular"},
+  {id:98, n:"Mosquito Repellent Lotion",    c:"Health & Daily Use", e:"🧴", b:null},
+  {id:99, n:"Hand Sanitizer",               c:"Health & Daily Use", e:"🧴", b:"Popular"},
+  {id:100,n:"Face Mask (Pack of 5)",        c:"Health & Daily Use", e:"😷", b:null},
+  {id:101,n:"ORS Sachets",                  c:"Health & Daily Use", e:"💊", b:null},
+  {id:102,n:"Panadol (Reference Only)",     c:"Health & Daily Use", e:"💊", b:null},
+  // ── KITCHEN & MISC ──
+  {id:103,n:"Bread (Pao Roti)",             c:"Kitchen & Misc", e:"🍞", b:"Popular"},
+  {id:104,n:"Jam (Shezan / Mitchell's)",    c:"Kitchen & Misc", e:"🍓", b:null},
+  {id:105,n:"Honey (Shifa / National)",     c:"Kitchen & Misc", e:"🍯", b:null},
+  {id:106,n:"Knorr Noodles",                c:"Kitchen & Misc", e:"🍜", b:"Popular"},
+  {id:107,n:"Maggi Noodles",                c:"Kitchen & Misc", e:"🍜", b:null},
+  {id:108,n:"Spaghetti / Pasta",            c:"Kitchen & Misc", e:"🍝", b:null},
+  {id:109,n:"Canned Tuna",                  c:"Kitchen & Misc", e:"🐟", b:null},
+  {id:110,n:"Canned Beans",                 c:"Kitchen & Misc", e:"🫘", b:null},
+  {id:111,n:"Vinegar",                      c:"Kitchen & Misc", e:"🫙", b:null},
+  {id:112,n:"Baking Powder",                c:"Kitchen & Misc", e:"🧁", b:null},
+];
+
+// CART
+let cart=[];
+function addToCart(id){
+  const p=P.find(x=>x.id===id);
+  if(!p||cart.find(x=>x.id===id))return;
+  cart.push(p);
+  document.getElementById('ccb').textContent=cart.length;
+  document.getElementById('cfab').classList.add('vis');
+  const btn=document.getElementById('ab'+id);
+  if(btn){btn.textContent='✅ Added';btn.classList.add('btn-added');setTimeout(()=>{btn.textContent='+ Add to Order';btn.classList.remove('btn-added');},1800);}
+}
+function rcart(id){
+  cart=cart.filter(x=>x.id!==id);
+  document.getElementById('ccb').textContent=cart.length;
+  if(!cart.length)document.getElementById('cfab').classList.remove('vis');
+  rm();
+}
+function oc(){document.getElementById('cmodal').classList.add('open');rm();}
+function cc(){document.getElementById('cmodal').classList.remove('open');}
+function rm(){
+  const l=document.getElementById('clist'),a=document.getElementById('cacts');
+  if(!cart.length){l.innerHTML='<div class="cart-emp">🛒<br/><br/>No items yet. Browse and add items to build your order.</div>';a.innerHTML='';return;}
+  l.innerHTML=cart.map(p=>`<div class="cit"><span class="cit-ico">${p.e}</span><span class="cit-nm">${p.n}</span><button class="cit-rm" onclick="rcart(${p.id})">🗑</button></div>`).join('');
+  const wt=encodeURIComponent(`Hello! I want to order from KK Qalandari Super Mart:\n\nItems:\n${cart.map(p=>'- '+p.n).join('\n')}\n\nPlease confirm:\nPickup or Delivery`);
+  a.innerHTML=`<a href="https://wa.me/923460639881?text=${wt}" target="_blank" class="btn-wa" style="font-size:14px;padding:12px;">💬 Send Order on WhatsApp (${cart.length} item${cart.length>1?'s':''})</a><button onclick="cart=[];document.getElementById('ccb').textContent=0;cc();document.getElementById('cfab').classList.remove('vis');" class="btn-wao">🗑 Clear Order</button>`;
+}
+
+// PRODUCT CARD
+function pc(p){
+  const wt=encodeURIComponent(`Hello! I want to order from KK Qalandari Super Mart:\n\nItems:\n- ${p.n}\n\nPlease confirm:\nPickup or Delivery`);
+  const bc=p.b==='Essential'?'gb':'';
+  return `<div class="pc fi">${p.b?`<div class="p-badge ${bc}">${p.b}</div>`:''}<div class="p-img">${p.e}</div><div class="p-body"><div class="p-ctag">${p.c}</div><div class="p-name">${p.n}</div><a href="https://wa.me/923460639881?text=${wt}" target="_blank" class="btn-wa">💬 Order on WhatsApp</a><button class="btn-wao" id="ab${p.id}" onclick="addToCart(${p.id})">+ Add to Order</button></div></div>`;
+}
+
+function rhp(){
+  document.getElementById('home-pg').innerHTML=P.filter(x=>x.b==='Popular').slice(0,10).map(pc).join('');
+  obs();
+}
+function rp(){
+  const q=(document.getElementById('ps')?.value||'').toLowerCase();
+  const cat=document.getElementById('cf')?.value||'';
+  // Normalize — strip HTML entities for comparison
+  const catClean=cat.replace(/&amp;/g,'&');
+  const f=P.filter(p=>{
+    const mq=!q||p.n.toLowerCase().includes(q)||p.c.toLowerCase().includes(q);
+    const mc=!catClean||p.c===catClean;
+    return mq&&mc;
+  });
+  const g=document.getElementById('apg'),nr=document.getElementById('nr');
+  if(!f.length){g.innerHTML='';nr.style.display='block';}
+  else{nr.style.display='none';g.innerHTML=f.map(pc).join('');obs();}
+}
+
+// PAGE NAV
+function sp(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('act'));
+  document.getElementById('page-'+page).classList.add('act');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('act'));
+  const el=document.getElementById('n'+page[0]);
+  if(el)el.classList.add('act');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(page==='products')setTimeout(rp,30);
+}
+function fc(cat){
+  sp('products');
+  setTimeout(()=>{
+    const sel=document.getElementById('cf');
+    // Match option value — options use &amp; so we need to find matching option
+    if(sel){
+      const cleanCat=cat.replace(/&amp;/g,'&');
+      for(let opt of sel.options){if(opt.value.replace(/&amp;/g,'&')===cleanCat){sel.value=opt.value;break;}}
+    }
+    rp();
+  },60);
+}
+function tm(){document.getElementById('mm').classList.toggle('open');}
+
+// FADE IN
+function obs(){
+  const els=document.querySelectorAll('.fi:not(.vis)');
+  if('IntersectionObserver' in window){
+    const o=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');o.unobserve(e.target);}});},{threshold:.08});
+    els.forEach(el=>o.observe(el));
+  }else{els.forEach(el=>el.classList.add('vis'));}
+}
+
+document.addEventListener('DOMContentLoaded',()=>{rhp();obs();});
+</script>
+</body>
+</html>
